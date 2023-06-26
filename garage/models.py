@@ -4,7 +4,7 @@ class Brand(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name.UPPER()
+        return self.name.upper()
     
     class Meta:
         verbose_name = "Brand"
