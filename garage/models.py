@@ -20,6 +20,16 @@ class Category(models.Model):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
+class Acessory(models.Model):
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.description
+    
+    class Meta:
+        verbose_name = "Acessory"
+        verbose_name_plural = "Acessories"
+
 class Car(models.Model):
     model = models.CharField(max_length=50)
     year = models.IntegerField(null=True, blank=True)
