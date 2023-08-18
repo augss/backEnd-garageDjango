@@ -1,4 +1,8 @@
+
 from django.db import models
+
+from uploader.models import Image
+
 from . import Brand, Category, Color, Accessory
 
 class Car(models.Model):
@@ -9,6 +13,10 @@ class Car(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="cars")
     color = models.ForeignKey(Color, on_delete=models.PROTECT, related_name="cars")
     accessories = models.ManyToManyField(Accessory, related_name="cars")
+    image = models.ManyToManyField(
+        Image,
+        related_name="+",
+    )
     
     def __str__(self):
         return f"{self.model} {self.category} {self.color} {self.year}"
