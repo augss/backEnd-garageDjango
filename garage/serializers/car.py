@@ -31,5 +31,5 @@ class CarDetailSerializer(ModelSerializer):
 class CarListSerializer(ModelSerializer):
     class Meta:
         model = Car
-        fields = ["id", "brand", "price"]
+        fields = ["id", "price"]
 

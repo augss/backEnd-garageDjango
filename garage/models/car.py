@@ -3,7 +3,7 @@ from django.db import models
 
 from uploader.models import Image
 
-from . import Category, Color, Model, Accessory
+from . import Color, Model, Accessory
 
 class Car(models.Model):
     model = models.ForeignKey(Model, on_delete=models.PROTECT, related_name="cars")
