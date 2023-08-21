@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_spectacular",
     "uploader",
     "garage",
 
@@ -134,6 +135,14 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissions",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Garage API",
+    "DESCRIPTION": "API for garage management, including endpoints and documentation.",
+    "VERSION": "1.0.0",
 }
 
 # App Uploader settings
