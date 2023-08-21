@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 
 from uploader.router import router as uploader_router
 
+from user.router import router as user_router
+
+
 from rest_framework.routers import DefaultRouter
 
 from drf_spectacular.views import (
@@ -39,6 +42,7 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
+    path("api/", include(user_router.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
