@@ -14,7 +14,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from garage.views import AccessoryViewSet, BrandViewSet, CarViewSet, ColorViewSet, CategoryViewSet
+from garage.views import AccessoryViewSet, BrandViewSet, ModelViewSet, CarViewSet, ColorViewSet, CategoryViewSet
 
 router = DefaultRouter()
 router.register(r"accessories", AccessoryViewSet)
@@ -22,6 +22,7 @@ router.register(r"brands", BrandViewSet)
 router.register(r"cars", CarViewSet)
 router.register(r"colors", ColorViewSet)
 router.register(r"categories", CategoryViewSet)
+router.register(r"models", ModelViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

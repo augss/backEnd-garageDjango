@@ -3,16 +3,14 @@ from django.db import models
 
 from uploader.models import Image
 
-from . import Brand, Category, Color, Accessory
+from . import Category, Color, Accessory, Model
 
 class Car(models.Model):
-    model = models.CharField(max_length=50)
+    model = models.ForeignKey(Model, on_delete=models.PROTECT, related_name="cars")
     year = models.IntegerField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)
-    brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name="cars")
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="cars")
     color = models.ForeignKey(Color, on_delete=models.PROTECT, related_name="cars")
-    accessories = models.ManyToManyField(Accessory, related_name="cars")
     image = models.ManyToManyField(
         Image,
         related_name="+",
