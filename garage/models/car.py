@@ -6,6 +6,7 @@ from uploader.models import Image
 from . import Color, Model, Accessory
 
 class Car(models.Model):
+    description = models.CharField(max_length=100, null=True, blank=True)
     model = models.ForeignKey(Model, on_delete=models.PROTECT, related_name="cars")
     year = models.IntegerField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)

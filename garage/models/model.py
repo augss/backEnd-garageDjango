@@ -8,7 +8,7 @@ class Model(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name="models")
 
     def __str__(self):
-        return self.nome
+        return self.name
 
     class Meta:
         verbose_name = "Model"
