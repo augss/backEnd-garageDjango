@@ -1,5 +1,5 @@
 import magic
-# file_magic = magic.Magic(magic_file="/home/jose.verediana/Projects/backEnd-garageDjango\magic\magic.mgc")
+# file_magic = magic.Magic(magic_file="magic\magic.mgc")
 
 CONTENT_TYPE_ICO = "image/x-icon"
 CONTENT_TYPE_JPG = "image/jpeg"
